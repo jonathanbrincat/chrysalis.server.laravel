@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
   <head>
     <meta charset="utf-8">
@@ -9,22 +9,29 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('styles/main.css') }}" rel="stylesheet">
   </head>
   <body>
-    <div id="app">
+    <header id="app__masthead">
       @include('_includes.navbar')
+    </header>
 
+    <main id="app__body">
       @include('_includes.notification')
 
       @yield('content')
-    </div>
+    </main>
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <footer id="app__footer">
+      <div class="container">
+        <p>Powered by pix'ie dust. Fuelled by tea. pix8 Ltd &copy; 2020.</p>
+        <p><small>&hellip;something is brewing.</small></p>
+      </div>
+    </footer>
+
+    <script src="{{ asset('scripts/main.js') }}"></script>
 
     <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-    <script>
-      CKEDITOR.replace( 'article-ckeditor' );
-    </script>
+    <script>CKEDITOR.replace( 'article-ckeditor' );</script>
   </body>
 </html>

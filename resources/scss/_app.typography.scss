@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@mixin font-size($value) {
+    font-size: ($value / ($value * 0 + 1)) * 10 + px; // <ie9
+    font-size: $value / ($value * 0 + 1) + rem;
+}
+
+//  eot         ---------       >ie5
+//  woff/woff2  ---------       webkit(chrome), firefox, opera, >ie8, ios, android, blackberry, ie mobile
+//  ttf/otf     ---------       webkit, firefox, opera(>15), ios, android, blackberry
+//  svg         ---------       webkit(safari), opera, ios, android, blackberry
+
+//  200         ---------       extralight/ultralight
+//  300         ---------       light
+//  400         ---------       regular
+//  500         ---------       medium
+//  600         ---------       semibold
+//  700         ---------       bold
+//  800         ---------       extrabold/black
+
+/* =============================================================================
+  Google fonts foundary
+  ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@200;300;400;600;700&family=Montserrat:wght@200;400&display=swap');
+
+/* =============================================================================
+	Bootstrap (glyphicon)
+	========================================================================== */
+// @font-face{
+// 	font-family: 'Glyphicons Halflings';
+// 	src: 	url('#{$font-path}bootstrap/glyphicons-halflings-regular.eot');
+// 	src: 	url('#{$font-path}bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+// 			url('#{$font-path}bootstrap/glyphicons-halflings-regular.woff') format('woff2'),
+// 			url('#{$font-path}bootstrap/glyphicons-halflings-regular.woff') format('woff'),
+// 			url('#{$font-path}bootstrap/glyphicons-halflings-regular.ttf') format('truetype'),
+// 			url('#{$font-path}bootstrap/glyphicons-halflings-regular.svg#Paymentfont') format('svg');
+// 	font-weight: 400;
+// 	font-style: normal;
+// }

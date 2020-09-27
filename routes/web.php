@@ -18,8 +18,6 @@ Route::get('/user/{id}/{name}', function ($id, $name) {
 */
 
 Route::get('/', 'PageController@index');
-Route::get('/about', 'PageController@about');
-Route::get('/services', 'PageController@services');
 
 Route::resource('posts', 'PostController'); //DEVNOTE: shorthand helper method will create and mapp all the associated RESTful --resource routes
 

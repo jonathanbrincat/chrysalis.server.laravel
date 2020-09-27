@@ -1,0 +1,115 @@
+html, body {
+  font-family: Montserrat, Helvetica, arial, sans-serif;
+  background-color: whitesmoke;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#app__body {
+  flex: 1;
+}
+
+/**/
+.ui__brand {
+  color: #93FFE8;
+  margin: 0;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.brand__link {
+  display: block;
+  width: 160px;
+}
+
+#app__footer {
+  background-color: #394149;
+  color: $color__white;
+  padding: 10px;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+#app__masthead {
+  background-color: #00ccbc;
+  color: #394149;
+
+  a:hover,
+  a:focus {
+    color: $color__white;
+  }
+}
+
+.btn {
+  border-width: 0;
+  border-radius: 1px;
+}
+
+/**/
+
+.navbar-nav {
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.post__synopsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.admin__post {
+  background-color: $color__white;
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  padding: 0 18px;
+}
+
+.ui__toolbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px;
+}
+
+.ui__controlbar {
+  display: flex;
+}
+
+.ui__field {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.form__control {
+  display: block;
+}
+
+.ui__tag {
+  border-radius: 3px;
+  background-color: $color__black;
+  color: $color__white;
+  padding: 3px 6px;
+  margin: 0 3px;
+
+  &:before {
+    content: "#";
+  }
+}

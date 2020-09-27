@@ -12,5 +12,19 @@
         <a href="/register" class="btn btn-success btn-lg">Register</a>
       </p>
     </div>
+
+    <!-- snippet came from welcome.blade.php template that ships with laravel -->
+    <div class="flex-center position-ref full-height">
+      @if(Route::has('login'))
+      <div class="top-right links">
+        @auth
+          <a href="{{ url('/home') }}">Home</a>
+        @else
+          <a href="{{ route('login') }}">Login</a>
+          <a href="{{ route('register') }}">Register</a>
+        @endauth
+      </div>
+      @endif
+    </div>
   </div>
 @endsection

@@ -2,29 +2,50 @@
 
 @section('content')
   <div class="container">
-    <h1>Posts</h1>
-
-    @if(count($posts) > 0)
-      @foreach($posts as $post)
-      <div class="well">
-        <div class="row">
-          <div class="col-md-4 col-sm-4">
-            <img src="/storage/cover_image/{{ $post->cover_image }}" style="width: 100%;" />
-          </div>
-
-          <div class="col-md-8 col-sm-8">
-            <h3><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h3>
-            <p><small>Written on {{ $post->created_at }} by {{ $post->user->name }}</small></p>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col-12">
+        <form action="" role="search"></form>
       </div>
-      @endforeach
+    </div>
 
-      {{-- Laravel pagination --}}
-      {{ $posts->links() }}
-    
-    @else
-    <p>No Posts found</p>
-    @endif
+    <div class="row">
+      @if(count($posts) > 0)
+      <div class="col-12">
+
+        {{-- Laravel pagination --}}
+        {{ $posts->links() }}
+
+        @foreach($posts as $post)
+        <article class="ui__card">
+          <header class="card__header">
+            <picture>
+              <a href="/posts/{{ $post->id }}">
+                <img src="https://picsum.photos/seed/picsum/300/200" alt="" />
+                {{-- <img src="/storage/cover_image/{{ $post->cover_image }}" style="width: 100%;" /> --}}
+              </a>
+            </picture>
+          </header>
+
+          <div class="card__body">
+            <p class="card__curation">Posted on {{ $post->created_at }} by {{ $post->user->name }}</p>
+            <h2 class="card__title"><a href="/posts/{{ $post->id }}">{{ $post->title }}</a></h2>
+          </div>
+
+          <footer class="card__footer">
+            
+          </footer>
+        </article>
+        @endforeach
+
+        {{-- Laravel pagination --}}
+        {{ $posts->links() }}
+      </div>
+
+      @else
+      <div class="col-12">
+        <h2>No Posts found</h2>
+      </div>
+      @endif
+    </div>
   </div>
 @endsection

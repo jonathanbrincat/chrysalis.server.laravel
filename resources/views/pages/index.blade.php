@@ -4,9 +4,6 @@
   <div class="container">
     <div class="jumbotron text-center">
       <h1>Welcome to Laravel</h1>
-      {{-- <h2>{{ $title }}</h2> --}}
-      <p>This is the Laravel application from the "Laravel from Scratch" Youtube series courtesy of Traversy Media</p>
-      <p><a href="https://github.com/bradtraversy/lsapp">https://github.com/bradtraversy/lsapp</a></p>
       <p>
         <a href="/login" class="btn btn-primary btn-lg">Login</a>
         <a href="/register" class="btn btn-success btn-lg">Register</a>
@@ -14,7 +11,7 @@
     </div>
 
     <!-- snippet came from welcome.blade.php template that ships with laravel -->
-    <div class="flex-center position-ref full-height">
+    <div class="flex-center text-center">
       @if(Route::has('login'))
       <div class="top-right links">
         @auth

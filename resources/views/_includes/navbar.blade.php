@@ -1,15 +1,7 @@
 <div class="container">
-  <!-- <nav class="navbar navbar-expand-md bg-primary"> -->
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
+  <nav class="navbar navbar-expand-md navbar-light">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation__primary" aria-controls="navigation__primary" aria-expanded="false">
-        <!--
-        <span class="sr-only">Toggle Navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        -->
-
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navigation__primary" aria-controls="navigation__primary" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
       </button>
 
@@ -21,17 +13,15 @@
       </p>
     </div>
 
-    <div id="navigation__primary" class="collapse navbar-collapse">
+    <div id="navigation__primary" class="collapse navbar-collapse justify-content-between">
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="/posts">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="/posts">My Posts</a></li>
       </ul>
 
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="navbar-nav">
         @guest
-        <li><a href="{{ route('login') }}">Login</a></li>
-        <li><a href="{{ route('register') }}">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
         @else
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>

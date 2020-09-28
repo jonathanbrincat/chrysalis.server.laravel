@@ -16,14 +16,29 @@
     <div id="navigation__primary" class="collapse navbar-collapse justify-content-between">
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="/posts">My Posts</a></li>
+        @auth
+        <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+        @endauth
       </ul>
 
       <ul class="navbar-nav">
         @guest
         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Sign up</a></li>
         @else
-        <li class="dropdown">
+        <li>
+          <a href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+            (<span>{{ Auth::user()->name }}</span>) Logout
+          </a>
+
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+          </form>
+        </li>
+
+        {{-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
             {{ Auth::user()->name }} <span class="caret"></span>
           </a>
@@ -42,7 +57,7 @@
               </form>
             </li>
           </ul>
-        </li>
+        </li> --}}
         @endguest
       </ul>
     </div>
